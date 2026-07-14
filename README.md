@@ -1,6 +1,34 @@
-# Welcome to your Expo app 👋
+# CribConnect
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+CribConnect is a mobile-first housing marketplace built for Georgian College international students in Barrie, ON. It replaces scam-prone, unstructured channels (Facebook Marketplace, Kijiji) with a student-focused search experience: browse admin-seeded listings, filter by distance to campus, and request contact with a landlord after getting verified as a real student.
+
+This is a v1 pilot: no landlord accounts/dashboard, no in-app chat, and no monetization yet. See [PLAN.md](./PLAN.md) for the full build plan, confirmed product decisions, and progress tracking.
+
+## Status
+
+Greenfield build on top of the default Expo Router v57 starter. Most functionality described below is planned, not yet implemented — check off items in [PLAN.md](./PLAN.md) as they land.
+
+## Planned feature set
+
+- **Auth**: Clerk, Google OAuth only
+- **Listings feed & map**: filter by price, distance to Georgian College Barrie campus, listing type, furnished, utilities included, bedrooms, move-in date, minimum lease length
+- **Request-info flow**: students request contact with a landlord; landlord notified by transactional email
+- **Student verification**: ID/enrollment doc upload, manual admin review, gates access to landlord contact info
+- **Trust & safety**: report/flag button on listings
+- **Admin screen**: listing CRUD, verification queue, leads log, reports queue (web-targeted, same Expo Router project)
+
+## Tech stack
+
+- [Expo](https://expo.dev) / Expo Router (file-based routing, API routes for the backend)
+- [Clerk](https://clerk.com) for auth
+- [Neon Postgres](https://neon.tech) via [Drizzle ORM](https://orm.drizzle.team)
+- [Inngest](https://www.inngest.com) for background jobs (notification emails)
+- [Resend](https://resend.com) for transactional email
+- [ImageKit](https://imagekit.io) for private document/photo storage
+- [Google Maps Platform](https://mapsplatform.google.com) for maps and geocoding
+- [Sentry](https://sentry.io) for observability
+
+> This project targets Expo SDK 57, which changed significantly from prior versions. Consult the [versioned v57 docs](https://docs.expo.dev/versions/v57.0.0/) rather than general Expo docs when working on this codebase.
 
 ## Get started
 
@@ -23,34 +51,16 @@ In the output, you'll find options to open the app in a
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+App code lives in [src/app](./src/app), using Expo Router's file-based routing.
 
-## Get a fresh project
+### Environment variables
 
-When you're ready, run:
+Provider API keys (Clerk, Neon, Inngest, ImageKit, Resend, Google Maps, Sentry) are configured via a local `.env` file, which is gitignored and not committed. Set one up per the provider docs above before running any feature that depends on them.
 
-```bash
-npm run reset-project
-```
+## Distribution
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Pilot distribution is via TestFlight and/or Expo Go to the student group — no public app store submission yet.
 
-### Other setup steps
+## License
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+See [LICENSE](./LICENSE).
