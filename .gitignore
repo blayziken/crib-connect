@@ -43,3 +43,6 @@ example
 /android
 
 .env
+.claude
+CLAUDE.md
+AGENTS.md
