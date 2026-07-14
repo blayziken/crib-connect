@@ -42,7 +42,10 @@ example
 /ios
 /android
 
+.vscode
+
 .env
 .claude
 CLAUDE.md
 AGENTS.md
+PLAN.md
