@@ -42,10 +42,9 @@ example
 /ios
 /android
 
-/.vscode
-/.claude
-
 .env
-CLAUDE.md
-AGENTS.md
-PLAN.md
+
+# Claude skills
+.agents/
+.claude/
+skills-lock.json
