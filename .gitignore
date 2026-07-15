@@ -48,3 +48,5 @@ example
 .agents/
 .claude/
 skills-lock.json
+
+PLAN.md
