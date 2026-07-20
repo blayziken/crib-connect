@@ -1,9 +1,17 @@
 {
-  "enabledPlugins": {
-    "expo@claude-plugins-official": true
-  },
   "attribution": {
     "commit": "",
     "pr": ""
+  },
+  "permissions": {
+    "allow": [
+      "Read(//Users/blaze/**)"
+    ],
+    "additionalDirectories": [
+      "/Users/blaze"
+    ]
+  },
+  "enabledPlugins": {
+    "expo@claude-plugins-official": true
   }
 }
