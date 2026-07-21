@@ -3,10 +3,10 @@ import {
   FlatList,
   Pressable,
   Text,
+  useWindowDimensions,
   View,
   type NativeScrollEvent,
   type NativeSyntheticEvent,
-  useWindowDimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -42,6 +42,8 @@ export default function OnboardingScreen() {
           </Pressable>
         </View>
 
+        <View className="flex-1" />
+
         <FlatList
           ref={listRef}
           data={onboardingSlides}
@@ -58,7 +60,7 @@ export default function OnboardingScreen() {
           onMomentumScrollEnd={handleMomentumScrollEnd}
         />
 
-        <View className="flex-1" />
+        {/* <View className="flex-1" /> */}
 
         <View className="pb-6">
           <PaginationDots
