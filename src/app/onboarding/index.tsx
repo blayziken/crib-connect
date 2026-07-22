@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { useRef, useState } from "react";
 import {
   FlatList,
@@ -74,7 +75,11 @@ export default function OnboardingScreen() {
           nextLabel={isLast ? "Get Started" : "Next"}
           onBack={() => goToIndex(activeIndex - 1)}
           onNext={() => {
-            if (!isLast) goToIndex(activeIndex + 1);
+            if (isLast) {
+              router.push("/auth");
+            } else {
+              goToIndex(activeIndex + 1);
+            }
           }}
         />
       </SafeAreaView>
