@@ -66,11 +66,21 @@ export default function AuthScreen() {
 
         <Pressable
           onPress={onGooglePress}
-          className="flex-row items-center justify-center gap-3 rounded-full bg-white py-5 shadow-md"
+          className="flex-row items-center justify-center gap-3 rounded-full bg-white py-4 shadow-md"
         >
           <GoogleGlyph size={20} />
           <Text className="text-base font-semibold text-[#0F172A]">
             Continue with Google
+          </Text>
+        </Pressable>
+
+        <Pressable
+          onPress={() => {}}
+          className="mt-5 flex-row items-center justify-center gap-3 rounded-full bg-black py-4"
+        >
+          <SymbolView name="apple.logo" tintColor="white" size={25} />
+          <Text className="text-base font-semibold text-white">
+            Continue with Apple
           </Text>
         </Pressable>
 
