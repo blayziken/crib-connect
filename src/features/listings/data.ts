@@ -7,10 +7,9 @@ export const dummyListings: Listing[] = [
     description:
       "Bright private room in a shared house, freshly renovated with a queen bed and large window.",
     type: "private_room",
-    price: { amount: 850, currency: "CAD", period: "month" },
+    price: { amount: 850, currency: "CAD", period: "month", isUtilitiesIncluded: true },
     bedrooms: 1,
     furnished: true,
-    utilitiesIncluded: true,
     images: [
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
@@ -27,10 +26,9 @@ export const dummyListings: Listing[] = [
     description:
       "Fully furnished 2-bedroom apartment steps from downtown Barrie, ideal for two roommates.",
     type: "entire_unit",
-    price: { amount: 1650, currency: "CAD", period: "month" },
+    price: { amount: 1650, currency: "CAD", period: "month", isUtilitiesIncluded: true },
     bedrooms: 2,
     furnished: true,
-    utilitiesIncluded: true,
     images: [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
       "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&q=80",
@@ -47,10 +45,9 @@ export const dummyListings: Listing[] = [
     description:
       "Cozy shared room in a quiet 2-bedroom home, great for students on a budget.",
     type: "shared_room",
-    price: { amount: 600, currency: "CAD", period: "month" },
+    price: { amount: 600, currency: "CAD", period: "month", isUtilitiesIncluded: false },
     bedrooms: 2,
     furnished: true,
-    utilitiesIncluded: false,
     images: [
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
     ],
@@ -66,10 +63,9 @@ export const dummyListings: Listing[] = [
     description:
       "Compact studio unit within walking distance of Georgian College, perfect for one student.",
     type: "entire_unit",
-    price: { amount: 1150, currency: "CAD", period: "month" },
+    price: { amount: 1150, currency: "CAD", period: "month", isUtilitiesIncluded: true },
     bedrooms: 1,
     furnished: true,
-    utilitiesIncluded: true,
     images: [
       "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&q=80",
       "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=800&q=80",
@@ -86,10 +82,9 @@ export const dummyListings: Listing[] = [
     description:
       "Private room with ensuite bathroom in a newly built student house.",
     type: "private_room",
-    price: { amount: 950, currency: "CAD", period: "month" },
+    price: { amount: 950, currency: "CAD", period: "month", isUtilitiesIncluded: true },
     bedrooms: 1,
     furnished: true,
-    utilitiesIncluded: true,
     images: [
       "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
     ],
@@ -105,10 +100,9 @@ export const dummyListings: Listing[] = [
     description:
       "Spacious entire house with 3 bedrooms, backyard, and driveway parking — great for a group of friends.",
     type: "entire_unit",
-    price: { amount: 2400, currency: "CAD", period: "month" },
+    price: { amount: 2400, currency: "CAD", period: "month", isUtilitiesIncluded: false },
     bedrooms: 3,
     furnished: false,
-    utilitiesIncluded: false,
     images: [
       "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=800&q=80",
       "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&q=80",
@@ -125,10 +119,9 @@ export const dummyListings: Listing[] = [
     description:
       "Shared room in a friendly student household, close to bus routes to campus.",
     type: "shared_room",
-    price: { amount: 575, currency: "CAD", period: "month" },
+    price: { amount: 575, currency: "CAD", period: "month", isUtilitiesIncluded: true },
     bedrooms: 2,
     furnished: true,
-    utilitiesIncluded: true,
     images: [
       "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=800&q=80",
     ],
@@ -144,10 +137,9 @@ export const dummyListings: Listing[] = [
     description:
       "Quiet private room close to Cundles Road, includes access to gym in building.",
     type: "private_room",
-    price: { amount: 800, currency: "CAD", period: "month" },
+    price: { amount: 800, currency: "CAD", period: "month", isUtilitiesIncluded: false },
     bedrooms: 1,
     furnished: true,
-    utilitiesIncluded: false,
     images: [
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
     ],
@@ -163,10 +155,9 @@ export const dummyListings: Listing[] = [
     description:
       "Bright 1-bedroom apartment with in-suite laundry, minutes from downtown.",
     type: "entire_unit",
-    price: { amount: 1400, currency: "CAD", period: "month" },
+    price: { amount: 1400, currency: "CAD", period: "month", isUtilitiesIncluded: true },
     bedrooms: 1,
     furnished: true,
-    utilitiesIncluded: true,
     images: [
       "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&q=80",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
@@ -183,10 +174,9 @@ export const dummyListings: Listing[] = [
     description:
       "Affordable shared room in a 4-bedroom student house, walking distance to campus.",
     type: "shared_room",
-    price: { amount: 550, currency: "CAD", period: "month" },
+    price: { amount: 550, currency: "CAD", period: "month", isUtilitiesIncluded: true },
     bedrooms: 4,
     furnished: true,
-    utilitiesIncluded: true,
     images: [
       "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
     ],
@@ -202,10 +192,9 @@ export const dummyListings: Listing[] = [
     description:
       "Stylish loft-style unit with high ceilings and exposed brick, close to nightlife on Dunlop.",
     type: "entire_unit",
-    price: { amount: 1800, currency: "CAD", period: "month" },
+    price: { amount: 1800, currency: "CAD", period: "month", isUtilitiesIncluded: false },
     bedrooms: 2,
     furnished: true,
-    utilitiesIncluded: false,
     images: [
       "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=800&q=80",
       "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&q=80",
@@ -222,10 +211,9 @@ export const dummyListings: Listing[] = [
     description:
       "Private room in a well-maintained home with shared kitchen and living space.",
     type: "private_room",
-    price: { amount: 700, currency: "CAD", period: "month" },
+    price: { amount: 700, currency: "CAD", period: "month", isUtilitiesIncluded: true },
     bedrooms: 1,
     furnished: false,
-    utilitiesIncluded: true,
     images: [
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
     ],
