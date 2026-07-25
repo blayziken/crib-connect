@@ -23,8 +23,7 @@ export default function AuthScreen() {
           </Text>
 
           <Text className="mt-8 text-center text-base leading-6 text-[#64748B]">
-            Verified student housing for{"\n"}international students in
-            Barrie.
+            Verified student housing for{"\n"}international students in Barrie.
           </Text>
 
           <View className="mt-7 flex-row items-center gap-1.5 rounded-full bg-[#DCFCE7] px-4 py-2.5">
@@ -44,11 +43,21 @@ export default function AuthScreen() {
 
         <Pressable
           onPress={() => {}}
-          className="flex-row items-center justify-center gap-3 rounded-full bg-white py-4 shadow-md"
+          className="flex-row items-center justify-center gap-3 rounded-full bg-white py-5 shadow-md"
         >
           <GoogleGlyph size={20} />
           <Text className="text-base font-semibold text-[#0F172A]">
             Continue with Google
+          </Text>
+        </Pressable>
+
+        <Pressable
+          onPress={() => {}}
+          className="mt-5 flex-row items-center justify-center gap-3 rounded-full bg-black py-5"
+        >
+          <SymbolView name="apple.logo" tintColor="white" size={25} />
+          <Text className="text-base font-semibold text-white">
+            Continue with Apple
           </Text>
         </Pressable>
 
@@ -63,8 +72,7 @@ export default function AuthScreen() {
               weight="semibold"
             />
             <Text className="shrink text-sm leading-5 text-[#64748B]">
-              Your information is private and{"\n"}never shared with
-              landlords.
+              Your information is private and{"\n"}never shared with landlords.
             </Text>
           </View>
 

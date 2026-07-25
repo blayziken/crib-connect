@@ -38,7 +38,12 @@ export default function OnboardingScreen() {
     <View className="flex-1 bg-[#E6F4FE]">
       <SafeAreaView edges={["top", "bottom"]} className="flex-1">
         <View className="flex-row justify-end px-6 pt-2">
-          <Pressable hitSlop={12}>
+          <Pressable
+            hitSlop={12}
+            onPress={() => {
+              router.push("/auth");
+            }}
+          >
             <Text className="text-base font-medium text-[#208AEF]">Skip</Text>
           </Pressable>
         </View>
