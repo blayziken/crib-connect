@@ -1,3 +1,5 @@
+import { useAuth, useSSO } from "@clerk/expo";
+import { Redirect, router } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -6,6 +8,27 @@ import { CribConnectLogo } from "@/components/auth/CribConnectLogo";
 import { GoogleGlyph } from "@/components/auth/GoogleGlyph";
 
 export default function AuthScreen() {
+  const { isLoaded, isSignedIn } = useAuth();
+  const { startSSOFlow } = useSSO();
+
+  if (!isLoaded) return null;
+  if (isSignedIn) return <Redirect href="/" />;
+
+  const onGooglePress = async () => {
+    try {
+      const { createdSessionId, setActive } = await startSSOFlow({
+        strategy: "oauth_google",
+      });
+
+      if (createdSessionId && setActive) {
+        await setActive({ session: createdSessionId });
+        router.replace("/");
+      }
+    } catch (err) {
+      console.error("Google sign-in error:", JSON.stringify(err, null, 2));
+    }
+  };
+
   return (
     <View className="flex-1 bg-white">
       <SafeAreaView edges={["top", "bottom"]} className="flex-1 px-8">
@@ -42,22 +65,12 @@ export default function AuthScreen() {
         <View className="flex-1" />
 
         <Pressable
-          onPress={() => {}}
+          onPress={onGooglePress}
           className="flex-row items-center justify-center gap-3 rounded-full bg-white py-5 shadow-md"
         >
           <GoogleGlyph size={20} />
           <Text className="text-base font-semibold text-[#0F172A]">
             Continue with Google
-          </Text>
-        </Pressable>
-
-        <Pressable
-          onPress={() => {}}
-          className="mt-5 flex-row items-center justify-center gap-3 rounded-full bg-black py-5"
-        >
-          <SymbolView name="apple.logo" tintColor="white" size={25} />
-          <Text className="text-base font-semibold text-white">
-            Continue with Apple
           </Text>
         </Pressable>
 
