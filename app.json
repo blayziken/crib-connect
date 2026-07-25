@@ -43,7 +43,9 @@
           "organization": "toluwalope",
           "project": "react-native"
         }
-      ]
+      ],
+      "expo-secure-store",
+      "@clerk/expo"
     ],
     "experiments": {
       "typedRoutes": true,
