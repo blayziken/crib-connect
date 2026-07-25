@@ -34,7 +34,7 @@ function HomeScreen() {
           </Text>
           <Text className="mt-8 text-center text-sm text-[#94A3B8]">
             This is a placeholder home screen.{"\n"}The real experience is
-            coming soon.
+            coming soon, keep calm.
           </Text>
         </View>
 
