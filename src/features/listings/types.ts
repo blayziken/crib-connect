@@ -4,6 +4,7 @@ export type ListingPrice = {
   amount: number;
   currency: string;
   period: "month";
+  isUtilitiesIncluded: boolean;
 };
 
 export type Listing = {
@@ -14,7 +15,6 @@ export type Listing = {
   price: ListingPrice;
   bedrooms: number;
   furnished: boolean;
-  utilitiesIncluded: boolean;
   images: string[];
   address: string;
   latitude: number;
