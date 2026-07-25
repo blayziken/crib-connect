@@ -34,3 +34,7 @@ export const onboardingSlides: OnboardingSlide[] = [
       "Thousands of international students in Barrie\nhave already found their home.",
   },
 ];
+
+// # Never run the app
+
+// Never run the application yourself (e.g. `expo start`, `npm run ios`, `npm run android`, `npm run web`). The user always has it running in a separate terminal already.

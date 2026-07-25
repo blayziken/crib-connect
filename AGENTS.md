@@ -2,10 +2,6 @@
 
 Read the exact versioned docs at https://docs.expo.dev/versions/v57.0.0/ before writing any code.
 
-# Never run the app
-
-Never run the application yourself (e.g. `expo start`, `npm run ios`, `npm run android`, `npm run web`). The user always has it running in a separate terminal already.
-
 # Tech stack
 
 - **Database**: Postgres via [Neon](https://neon.tech)
