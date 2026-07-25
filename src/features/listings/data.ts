@@ -7,8 +7,7 @@ export const dummyListings: Listing[] = [
     description:
       "Bright private room in a shared house, freshly renovated with a queen bed and large window.",
     type: "private_room",
-    price: 850,
-    currency: "CAD",
+    price: { amount: 850, currency: "CAD", period: "month" },
     bedrooms: 1,
     furnished: true,
     utilitiesIncluded: true,
@@ -28,8 +27,7 @@ export const dummyListings: Listing[] = [
     description:
       "Fully furnished 2-bedroom apartment steps from downtown Barrie, ideal for two roommates.",
     type: "entire_unit",
-    price: 1650,
-    currency: "CAD",
+    price: { amount: 1650, currency: "CAD", period: "month" },
     bedrooms: 2,
     furnished: true,
     utilitiesIncluded: true,
@@ -49,8 +47,7 @@ export const dummyListings: Listing[] = [
     description:
       "Cozy shared room in a quiet 2-bedroom home, great for students on a budget.",
     type: "shared_room",
-    price: 600,
-    currency: "CAD",
+    price: { amount: 600, currency: "CAD", period: "month" },
     bedrooms: 2,
     furnished: true,
     utilitiesIncluded: false,
@@ -69,8 +66,7 @@ export const dummyListings: Listing[] = [
     description:
       "Compact studio unit within walking distance of Georgian College, perfect for one student.",
     type: "entire_unit",
-    price: 1150,
-    currency: "CAD",
+    price: { amount: 1150, currency: "CAD", period: "month" },
     bedrooms: 1,
     furnished: true,
     utilitiesIncluded: true,
@@ -90,8 +86,7 @@ export const dummyListings: Listing[] = [
     description:
       "Private room with ensuite bathroom in a newly built student house.",
     type: "private_room",
-    price: 950,
-    currency: "CAD",
+    price: { amount: 950, currency: "CAD", period: "month" },
     bedrooms: 1,
     furnished: true,
     utilitiesIncluded: true,
@@ -110,8 +105,7 @@ export const dummyListings: Listing[] = [
     description:
       "Spacious entire house with 3 bedrooms, backyard, and driveway parking — great for a group of friends.",
     type: "entire_unit",
-    price: 2400,
-    currency: "CAD",
+    price: { amount: 2400, currency: "CAD", period: "month" },
     bedrooms: 3,
     furnished: false,
     utilitiesIncluded: false,
@@ -131,8 +125,7 @@ export const dummyListings: Listing[] = [
     description:
       "Shared room in a friendly student household, close to bus routes to campus.",
     type: "shared_room",
-    price: 575,
-    currency: "CAD",
+    price: { amount: 575, currency: "CAD", period: "month" },
     bedrooms: 2,
     furnished: true,
     utilitiesIncluded: true,
@@ -151,8 +144,7 @@ export const dummyListings: Listing[] = [
     description:
       "Quiet private room close to Cundles Road, includes access to gym in building.",
     type: "private_room",
-    price: 800,
-    currency: "CAD",
+    price: { amount: 800, currency: "CAD", period: "month" },
     bedrooms: 1,
     furnished: true,
     utilitiesIncluded: false,
@@ -171,8 +163,7 @@ export const dummyListings: Listing[] = [
     description:
       "Bright 1-bedroom apartment with in-suite laundry, minutes from downtown.",
     type: "entire_unit",
-    price: 1400,
-    currency: "CAD",
+    price: { amount: 1400, currency: "CAD", period: "month" },
     bedrooms: 1,
     furnished: true,
     utilitiesIncluded: true,
@@ -192,8 +183,7 @@ export const dummyListings: Listing[] = [
     description:
       "Affordable shared room in a 4-bedroom student house, walking distance to campus.",
     type: "shared_room",
-    price: 550,
-    currency: "CAD",
+    price: { amount: 550, currency: "CAD", period: "month" },
     bedrooms: 4,
     furnished: true,
     utilitiesIncluded: true,
@@ -212,8 +202,7 @@ export const dummyListings: Listing[] = [
     description:
       "Stylish loft-style unit with high ceilings and exposed brick, close to nightlife on Dunlop.",
     type: "entire_unit",
-    price: 1800,
-    currency: "CAD",
+    price: { amount: 1800, currency: "CAD", period: "month" },
     bedrooms: 2,
     furnished: true,
     utilitiesIncluded: false,
@@ -233,8 +222,7 @@ export const dummyListings: Listing[] = [
     description:
       "Private room in a well-maintained home with shared kitchen and living space.",
     type: "private_room",
-    price: 700,
-    currency: "CAD",
+    price: { amount: 700, currency: "CAD", period: "month" },
     bedrooms: 1,
     furnished: false,
     utilitiesIncluded: true,
