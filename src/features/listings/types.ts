@@ -1,12 +1,17 @@
 export type ListingType = "private_room" | "entire_unit" | "shared_room";
 
+export type ListingPrice = {
+  amount: number;
+  currency: string;
+  period: "month";
+};
+
 export type Listing = {
   id: string;
   title: string;
   description: string;
   type: ListingType;
-  price: number;
-  currency: string;
+  price: ListingPrice;
   bedrooms: number;
   furnished: boolean;
   utilitiesIncluded: boolean;
