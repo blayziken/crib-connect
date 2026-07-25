@@ -5,7 +5,9 @@
   },
   "permissions": {
     "allow": [
-      "Read(//Users/blaze/**)"
+      "Read(//Users/blaze/**)",
+      "Bash(gem list *)",
+      "Bash(ruby -e 'require \"xcodeproj\"; puts Xcodeproj::Project::Object::PBXNativeTarget.instance_method\\(:add_dependency\\).source_location')"
     ],
     "additionalDirectories": [
       "/Users/blaze"
