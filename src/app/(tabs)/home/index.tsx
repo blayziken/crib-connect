@@ -6,7 +6,10 @@ import { useAuth } from "@clerk/expo";
 import { Redirect } from "expo-router";
 import { useState } from "react";
 import { FlatList, View } from "react-native";
-import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
 
 export default function Index() {
   const { isLoaded, isSignedIn } = useAuth();
@@ -47,7 +50,7 @@ function HomeScreen() {
             </View>
           }
           contentContainerClassName="px-5"
-          contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}
+          contentContainerStyle={{ paddingBottom: insets.bottom + 40 }}
           showsVerticalScrollIndicator={false}
         />
       </SafeAreaView>
