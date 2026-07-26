@@ -74,15 +74,15 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
       </View>
 
       <View className="px-4 pb-4 pt-3.5">
-        <View className="flex-row items-start justify-between gap-2">
+        <View className="flex-row items-center justify-between gap-2">
           <Text
-            className="flex-1 text-[19px] font-bold text-[#0F172A]"
+            className="flex-1 text-[15px] font-bold text-[#0F172A]"
             numberOfLines={1}
           >
             {listing.title}
           </Text>
           <View
-            className="flex-row items-center gap-1 rounded-full px-3 py-1"
+            className="flex-row items-center gap-1 rounded-full px-3 py-2"
             style={{ backgroundColor: meta.bg }}
           >
             <SymbolView
@@ -109,13 +109,13 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
         <View className="mt-3 flex-row items-center justify-between">
           <View className="flex-row items-center gap-1.5">
             <SymbolView name="bed.double.fill" tintColor="#475569" size={15} />
-            <Text className="text-[13px] text-[#475569]">
+            <Text className="text-[12px] text-[#475569]">
               {listing.furnished ? "Furnished" : "Unfurnished"}
             </Text>
           </View>
           <View className="flex-row items-center gap-1.5">
             <SymbolView name="bolt.fill" tintColor="#475569" size={15} />
-            <Text className="text-[13px] text-[#475569]">
+            <Text className="text-[12px] text-[#475569]">
               {listing.price.isUtilitiesIncluded
                 ? "Utilities Incl."
                 : "Utilities Excl."}
@@ -123,7 +123,7 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
           </View>
           <View className="flex-row items-center gap-1.5">
             <SymbolView name="bed.double.fill" tintColor="#475569" size={15} />
-            <Text className="text-[13px] text-[#475569]">{bedroomsLabel}</Text>
+            <Text className="text-[12px] text-[#475569]">{bedroomsLabel}</Text>
           </View>
         </View>
       </View>
