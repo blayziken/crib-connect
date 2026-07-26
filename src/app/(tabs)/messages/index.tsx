@@ -20,6 +20,7 @@ export default function MessagesScreen() {
       <SafeAreaView edges={["top"]} className="flex-1">
         <View className="px-5">
           <MessagesHeader />
+          <MessagesSearchBar value={search} onChangeText={setSearch} />
         </View>
 
         <ScrollView
@@ -27,8 +28,6 @@ export default function MessagesScreen() {
           contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}
           showsVerticalScrollIndicator={false}
         >
-          <MessagesSearchBar value={search} onChangeText={setSearch} />
-
           <View
             className="mt-5 rounded-[20px] bg-white"
             style={{
