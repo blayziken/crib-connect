@@ -7,11 +7,15 @@ type SearchBarProps = {
   onFilterPress?: () => void;
 };
 
-export function SearchBar({ value, onChangeText, onFilterPress }: SearchBarProps) {
+export function SearchBar({
+  value,
+  onChangeText,
+  onFilterPress,
+}: SearchBarProps) {
   return (
     <View className="mt-4 flex-row items-center gap-3">
       <View className="h-[52px] flex-1 flex-row items-center gap-2 rounded-full bg-[#F1F5F9] px-4">
-        <SymbolView name="magnifyingglass" tintColor="#94A3B8" size={18} />
+        <SymbolView name="magnifyingglass" tintColor="#94A3B8" size={20} />
         <TextInput
           value={value}
           onChangeText={onChangeText}
@@ -25,7 +29,12 @@ export function SearchBar({ value, onChangeText, onFilterPress }: SearchBarProps
         onPress={onFilterPress}
         className="h-[52px] w-[52px] items-center justify-center rounded-2xl bg-[#3B82F6]"
       >
-        <SymbolView name="line.3.horizontal.decrease" tintColor="white" size={18} weight="semibold" />
+        <SymbolView
+          name="line.3.horizontal.decrease"
+          tintColor="white"
+          size={18}
+          weight="semibold"
+        />
       </Pressable>
     </View>
   );
