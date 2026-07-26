@@ -36,6 +36,10 @@ function HomeScreen() {
   return (
     <View className="flex-1 bg-white">
       <SafeAreaView edges={["top"]} className="flex-1">
+        <View className="px-5">
+          <HomeHeader />
+        </View>
+
         <FlatList
           data={listings}
           keyExtractor={(item) => item.id}
@@ -45,7 +49,6 @@ function HomeScreen() {
           ItemSeparatorComponent={() => <View className="h-5" />}
           ListHeaderComponent={
             <View className="pb-5">
-              <HomeHeader />
               <SearchBar value={search} onChangeText={setSearch} />
             </View>
           }
