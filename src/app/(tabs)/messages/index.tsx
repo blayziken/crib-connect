@@ -18,12 +18,15 @@ export default function MessagesScreen() {
   return (
     <View className="flex-1 bg-white">
       <SafeAreaView edges={["top"]} className="flex-1">
+        <View className="px-5">
+          <MessagesHeader />
+        </View>
+
         <ScrollView
           contentContainerClassName="px-5 pb-5"
           contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}
           showsVerticalScrollIndicator={false}
         >
-          <MessagesHeader />
           <MessagesSearchBar value={search} onChangeText={setSearch} />
 
           <View
