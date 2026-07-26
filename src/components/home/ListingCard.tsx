@@ -2,7 +2,10 @@ import type { Listing, ListingType } from "@/features/listings/types";
 import { SymbolView } from "expo-symbols";
 import { Image, Pressable, Text, View } from "react-native";
 
-const TYPE_META: Record<ListingType, { label: string; bg: string; color: string }> = {
+const TYPE_META: Record<
+  ListingType,
+  { label: string; bg: string; color: string }
+> = {
   private_room: { label: "Private Room", bg: "#DBEAFE", color: "#3B82F6" },
   entire_unit: { label: "Entire Unit", bg: "#DCFCE7", color: "#16A34A" },
   shared_room: { label: "Shared Room", bg: "#FFEDD5", color: "#F97316" },
@@ -32,7 +35,7 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
         <Image
           source={{ uri: listing.images[0] }}
           className="w-full rounded-t-[20px]"
-          style={{ aspectRatio: 1.7 }}
+          style={{ aspectRatio: 2.3 }}
           resizeMode="cover"
         />
 
@@ -63,8 +66,8 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
             shadowOffset: { width: 0, height: 2 },
           }}
         >
-          <SymbolView name="mappin.circle.fill" tintColor="#3B82F6" size={14} />
-          <Text className="text-[13px] font-semibold text-[#1E293B]">
+          <SymbolView name="location.fill" tintColor="#3B82F6" size={14} />d
+          <Text className="text-[14px] font-semibold text-[#1E293B]">
             {listing.distanceFromCampusKm} km from campus
           </Text>
         </View>
@@ -72,15 +75,25 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
 
       <View className="px-4 pb-4 pt-3.5">
         <View className="flex-row items-start justify-between gap-2">
-          <Text className="flex-1 text-[19px] font-bold text-[#0F172A]" numberOfLines={1}>
+          <Text
+            className="flex-1 text-[19px] font-bold text-[#0F172A]"
+            numberOfLines={1}
+          >
             {listing.title}
           </Text>
           <View
             className="flex-row items-center gap-1 rounded-full px-3 py-1"
             style={{ backgroundColor: meta.bg }}
           >
-            <SymbolView name="mappin.circle.fill" tintColor={meta.color} size={12} />
-            <Text className="text-[12px] font-semibold" style={{ color: meta.color }}>
+            <SymbolView
+              name="mappin.circle.fill"
+              tintColor={meta.color}
+              size={12}
+            />
+            <Text
+              className="text-[12px] font-semibold"
+              style={{ color: meta.color }}
+            >
               {meta.label}
             </Text>
           </View>
@@ -103,7 +116,9 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
           <View className="flex-row items-center gap-1.5">
             <SymbolView name="bolt.fill" tintColor="#475569" size={15} />
             <Text className="text-[13px] text-[#475569]">
-              {listing.price.isUtilitiesIncluded ? "Utilities Incl." : "Utilities Excl."}
+              {listing.price.isUtilitiesIncluded
+                ? "Utilities Incl."
+                : "Utilities Excl."}
             </Text>
           </View>
           <View className="flex-row items-center gap-1.5">
