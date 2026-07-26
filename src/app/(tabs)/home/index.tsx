@@ -1,7 +1,11 @@
-import { CribConnectLogo } from "@/components/auth/CribConnectLogo";
-import { useAuth, useUser } from "@clerk/expo";
+import { HomeHeader } from "@/components/home/HomeHeader";
+import { ListingCard } from "@/components/home/ListingCard";
+import { SearchBar } from "@/components/home/SearchBar";
+import { dummyListings } from "@/features/listings/data";
+import { useAuth } from "@clerk/expo";
 import { Redirect } from "expo-router";
-import { Text, View } from "react-native";
+import { useState } from "react";
+import { FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -14,27 +18,36 @@ export default function Index() {
 }
 
 function HomeScreen() {
-  const { user } = useUser();
+  const [search, setSearch] = useState("");
+  const [listings, setListings] = useState(dummyListings);
+
+  const toggleSave = (id: string) => {
+    setListings((prev) =>
+      prev.map((listing) =>
+        listing.id === id ? { ...listing, isSaved: !listing.isSaved } : listing,
+      ),
+    );
+  };
 
   return (
     <View className="flex-1 bg-white">
-      <SafeAreaView
-        edges={["top", "bottom"]}
-        className="flex-1 items-center px-8"
-      >
-        <View className="flex-1 items-center justify-center">
-          <CribConnectLogo size={72} />
-          <Text className="mt-6 text-center text-[22px] font-bold text-[#0F172A]">
-            Welcome{user?.firstName ? `, ${user.firstName}` : ""}!
-          </Text>
-          <Text className="mt-2 text-center text-base text-[#64748B]">
-            {user?.primaryEmailAddress?.emailAddress}
-          </Text>
-          <Text className="mt-8 text-center text-sm text-[#94A3B8]">
-            This is a placeholder home screen.{"\n"}The real experience is
-            coming soon, keep calm.
-          </Text>
-        </View>
+      <SafeAreaView edges={["top"]} className="flex-1">
+        <FlatList
+          data={listings}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <ListingCard listing={item} onToggleSave={toggleSave} />
+          )}
+          ItemSeparatorComponent={() => <View className="h-5" />}
+          ListHeaderComponent={
+            <View className="pb-5">
+              <HomeHeader />
+              <SearchBar value={search} onChangeText={setSearch} />
+            </View>
+          }
+          contentContainerClassName="px-5 pb-5"
+          showsVerticalScrollIndicator={false}
+        />
       </SafeAreaView>
     </View>
   );
