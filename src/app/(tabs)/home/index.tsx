@@ -6,7 +6,7 @@ import { useAuth } from "@clerk/expo";
 import { Redirect } from "expo-router";
 import { useState } from "react";
 import { FlatList, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Index() {
   const { isLoaded, isSignedIn } = useAuth();
@@ -18,6 +18,7 @@ export default function Index() {
 }
 
 function HomeScreen() {
+  const insets = useSafeAreaInsets();
   const [search, setSearch] = useState("");
   const [listings, setListings] = useState(dummyListings);
 
@@ -45,7 +46,8 @@ function HomeScreen() {
               <SearchBar value={search} onChangeText={setSearch} />
             </View>
           }
-          contentContainerClassName="px-5 pb-5"
+          contentContainerClassName="px-5"
+          contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}
           showsVerticalScrollIndicator={false}
         />
       </SafeAreaView>
