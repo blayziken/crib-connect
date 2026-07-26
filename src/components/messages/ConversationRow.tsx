@@ -8,11 +8,11 @@ type ConversationRowProps = {
 
 export function ConversationRow({ conversation }: ConversationRowProps) {
   return (
-    <View className="flex-row items-start gap-3 px-4 py-5">
+    <View className="flex-row items-center gap-3 px-4 py-5">
       <View className="relative">
         <Image
           source={{ uri: conversation.avatarUrl }}
-          className="h-[52px] w-[52px] rounded-full"
+          className="h-[60px] w-[60px] rounded-full"
         />
         <View className="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-[#22C55E]" />
       </View>
@@ -21,7 +21,7 @@ export function ConversationRow({ conversation }: ConversationRowProps) {
         <View className="flex-row items-center justify-between gap-2">
           <View className="flex-1 flex-row items-center gap-1.5">
             <Text
-              className="text-[16px] font-bold text-[#0F172A]"
+              className="text-[15px] font-bold text-[#0F172A]"
               numberOfLines={1}
             >
               {conversation.name}
@@ -46,7 +46,7 @@ export function ConversationRow({ conversation }: ConversationRowProps) {
 
         <View className="mt-2 flex-row items-end justify-between gap-2">
           <Text
-            className="flex-1 text-[14px] leading-[19px] text-[#64748B]"
+            className="flex-1 text-[13px] leading-[19px] text-[#64748B]"
             numberOfLines={2}
           >
             {conversation.lastMessage}
