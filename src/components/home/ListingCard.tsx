@@ -66,7 +66,7 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
             shadowOffset: { width: 0, height: 2 },
           }}
         >
-          <SymbolView name="location.fill" tintColor="#3B82F6" size={14} />d
+          <SymbolView name="location.fill" tintColor="#3B82F6" size={14} />
           <Text className="text-[14px] font-semibold text-[#1E293B]">
             {listing.distanceFromCampusKm} km from campus
           </Text>
