@@ -1,8 +1,7 @@
 import { CribConnectLogo } from "@/components/auth/CribConnectLogo";
-import { useAuth, useClerk, useUser } from "@clerk/expo";
+import { useAuth, useUser } from "@clerk/expo";
 import { Redirect } from "expo-router";
-import { SymbolView } from "expo-symbols";
-import { Pressable, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -16,7 +15,6 @@ export default function Index() {
 
 function HomeScreen() {
   const { user } = useUser();
-  const { signOut } = useClerk();
 
   return (
     <View className="flex-1 bg-white">
@@ -37,19 +35,6 @@ function HomeScreen() {
             coming soon, keep calm.
           </Text>
         </View>
-
-        <Pressable
-          onPress={() => signOut()}
-          className="mb-4 w-full flex-row items-center justify-center gap-2 rounded-full bg-[#0F172A] py-4"
-        >
-          <SymbolView
-            name="rectangle.portrait.and.arrow.right"
-            tintColor="white"
-            size={18}
-            weight="semibold"
-          />
-          <Text className="text-base font-semibold text-white">Sign Out</Text>
-        </Pressable>
       </SafeAreaView>
     </View>
   );
