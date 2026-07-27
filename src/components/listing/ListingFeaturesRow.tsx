@@ -56,7 +56,6 @@ export function ListingFeaturesRow({
           <Text className="mt-2 text-center text-[11.5px] text-[#334155]">
             {feature.label}
           </Text>
-          w
         </View>
       ))}
     </View>
