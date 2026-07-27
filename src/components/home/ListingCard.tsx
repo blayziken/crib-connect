@@ -1,4 +1,5 @@
 import type { Listing, ListingType } from "@/features/listings/types";
+import { router } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { Image, Pressable, Text, View } from "react-native";
 
@@ -21,7 +22,10 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
   const bedroomsLabel = `${listing.bedrooms} Bedroom${listing.bedrooms === 1 ? "" : "s"}`;
 
   return (
-    <View
+    <Pressable
+      onPress={() =>
+        router.push({ pathname: "/listing/[id]", params: { id: listing.id } })
+      }
       className="rounded-[20px] bg-white"
       style={{
         shadowColor: "#0F172A",
@@ -40,7 +44,10 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
         />
 
         <Pressable
-          onPress={() => onToggleSave?.(listing.id)}
+          onPress={(event) => {
+            event.stopPropagation();
+            onToggleSave?.(listing.id);
+          }}
           className="absolute right-3 top-3 h-10 w-10 items-center justify-center rounded-full bg-white"
           style={{
             shadowColor: "#0F172A",
@@ -127,6 +134,6 @@ export function ListingCard({ listing, onToggleSave }: ListingCardProps) {
           </View>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 }
