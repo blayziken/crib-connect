@@ -14,14 +14,14 @@ export function ListingSummary({
 }: ListingSummaryProps) {
   return (
     <View>
-      <View className="flex-row items-center gap-1.5">
+      <View className="flex-row items-center gap-1">
         <SymbolView
           name="mappin"
           tintColor="#3B82F6"
-          size={17}
+          size={16}
           weight="semibold"
         />
-        <Text className="text-[14px] font-semibold text-[#3B82F6]">
+        <Text className="text-[13px] font-semibold text-[#3B82F6]">
           {distanceFromCampusKm} km from campus
         </Text>
       </View>
