@@ -21,7 +21,7 @@ export function ProfileHeader({ profile, onEditPress }: ProfileHeaderProps) {
     >
       <View className="px-5 pb-16">
         <View className="flex-row items-start justify-between">
-          <View className="flex-1 flex-row items-start gap-4">
+          <View className="flex-1 flex-row items-center gap-4">
             <View className="relative">
               <Image
                 source={{ uri: profile.avatarUrl }}
@@ -37,8 +37,13 @@ export function ProfileHeader({ profile, onEditPress }: ProfileHeaderProps) {
 
               {profile.isVerifiedStudent && (
                 <View className="mt-1.5 flex-row items-center gap-1.5">
-                  <View className="h-4 w-4 items-center justify-center rounded-full bg-[#22C55E]">
-                    <SymbolView name="checkmark" tintColor="white" size={9} weight="bold" />
+                  <View className="h-5 w-5 items-center justify-center rounded-full bg-[#22C55E]">
+                    <SymbolView
+                      name="checkmark"
+                      tintColor="white"
+                      size={9}
+                      weight="bold"
+                    />
                   </View>
                   <Text className="text-[15px] font-semibold text-white">
                     Verified Student
@@ -57,9 +62,14 @@ export function ProfileHeader({ profile, onEditPress }: ProfileHeaderProps) {
 
           <Pressable
             onPress={onEditPress}
-            className="h-11 w-11 items-center justify-center rounded-2xl bg-white/25"
+            className="h-11 w-11 items-center justify-center rounded-2xl bg-white/75"
           >
-            <SymbolView name="pencil" tintColor="white" size={19} weight="semibold" />
+            <SymbolView
+              name="pencil"
+              tintColor="grey"
+              size={19}
+              weight="semibold"
+            />
           </Pressable>
         </View>
       </View>
