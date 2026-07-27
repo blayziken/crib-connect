@@ -11,7 +11,7 @@ export function AboutPlaceSection({ description }: AboutPlaceSectionProps) {
 
   return (
     <View className="border-t border-[#F1F5F9] pt-5">
-      <Text className="text-[16px] font-bold text-[#0F172A]">
+      <Text className="text-[14px] font-bold text-[#0F172A]">
         About this place
       </Text>
       <Text
