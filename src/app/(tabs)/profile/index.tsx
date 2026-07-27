@@ -1,45 +1,28 @@
-import { useClerk } from "@clerk/expo";
-import { SymbolView } from "expo-symbols";
-import { Pressable, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { AboutMeCard } from "@/components/profile/AboutMeCard";
+import { PreferencesCard } from "@/components/profile/PreferencesCard";
+import { ProfileHeader } from "@/components/profile/ProfileHeader";
+import { SafetyVerificationCard } from "@/components/profile/SafetyVerificationCard";
+import { dummyUserProfile } from "@/features/profile/data";
+import { ScrollView, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function ProfileScreen() {
-  const { signOut } = useClerk();
+  const insets = useSafeAreaInsets();
 
   return (
-    <View className="flex-1 bg-white">
-      <SafeAreaView edges={["top", "bottom"]} className="flex-1 px-8">
-        <View className="flex-1 items-center justify-center">
-          <View className="h-16 w-16 items-center justify-center rounded-full bg-[#E6F4FE]">
-            <SymbolView
-              name="person.fill"
-              tintColor="#208AEF"
-              size={28}
-              weight="semibold"
-            />
-          </View>
-          <Text className="mt-6 text-center text-[22px] font-bold text-[#0F172A]">
-            Profile
-          </Text>
-          <Text className="mt-2 text-center text-sm text-[#94A3B8]">
-            This is a placeholder screen.{"\n"}The real experience is coming
-            soon.
-          </Text>
-        </View>
+    <View className="flex-1 bg-[#F1F5F9]">
+      <ProfileHeader profile={dummyUserProfile} />
 
-        <Pressable
-          onPress={() => signOut()}
-          className="mb-4 w-full flex-row items-center justify-center gap-2 rounded-full bg-[#0F172A] py-4"
-        >
-          <SymbolView
-            name="rectangle.portrait.and.arrow.right"
-            tintColor="white"
-            size={18}
-            weight="semibold"
-          />
-          <Text className="text-base font-semibold text-white">Sign Out</Text>
-        </Pressable>
-      </SafeAreaView>
+      <ScrollView
+        style={{ marginTop: -28 }}
+        contentContainerClassName="gap-4 px-5"
+        contentContainerStyle={{ paddingBottom: insets.bottom + 24 }}
+        showsVerticalScrollIndicator={false}
+      >
+        <AboutMeCard aboutMe={dummyUserProfile.aboutMe} />
+        <SafetyVerificationCard />
+        <PreferencesCard preferences={dummyUserProfile.preferences} />
+      </ScrollView>
     </View>
   );
 }
