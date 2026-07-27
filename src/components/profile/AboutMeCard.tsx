@@ -7,7 +7,7 @@ type AboutMeCardProps = {
 export function AboutMeCard({ aboutMe }: AboutMeCardProps) {
   return (
     <View
-      className="rounded-[24px] bg-white p-5"
+      className="rounded-[20px] bg-white px-5 py-7"
       style={{
         shadowColor: "#0F172A",
         shadowOpacity: 0.08,
