@@ -16,7 +16,7 @@ export function AboutMeCard({ aboutMe }: AboutMeCardProps) {
         elevation: 3,
       }}
     >
-      <Text className="text-[17px] font-bold text-[#0F172A]">About me</Text>
+      <Text className="text-[15px] font-bold text-[#0F172A]">About me</Text>
       <Text className="mt-2.5 text-[15px] leading-[22px] text-[#334155]">
         {aboutMe}
       </Text>
