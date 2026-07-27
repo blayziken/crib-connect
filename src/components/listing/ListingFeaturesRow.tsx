@@ -45,7 +45,7 @@ export function ListingFeaturesRow({
     <View className="flex-row">
       {features.map((feature) => (
         <View key={feature.key} className="flex-1 items-center">
-          <View className="h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF2FE]">
+          <View className="h-12 w-12 items-center justify-center rounded-2xl bg-[#AED0FA5E]">
             <SymbolView
               name={feature.icon}
               tintColor="#3B82F6"
