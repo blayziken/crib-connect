@@ -8,6 +8,7 @@ type AboutPlaceSectionProps = {
 
 export function AboutPlaceSection({ description }: AboutPlaceSectionProps) {
   const [expanded, setExpanded] = useState(false);
+  const [lineCount, setLineCount] = useState(0);
 
   return (
     <View className="border-t border-[#F1F5F9] pt-5">
@@ -16,26 +17,31 @@ export function AboutPlaceSection({ description }: AboutPlaceSectionProps) {
       </Text>
       <Text
         numberOfLines={expanded ? undefined : 3}
+        onTextLayout={(e) => {
+          setLineCount(e.nativeEvent.lines.length);
+        }}
         className="mt-2 text-[14px] leading-[21px] text-[#64748B]"
       >
         {description}
       </Text>
 
-      <Pressable
-        onPress={() => setExpanded((prev) => !prev)}
-        hitSlop={8}
-        className="mt-2 flex-row items-center gap-1 self-start"
-      >
-        <Text className="text-[14px] font-semibold text-[#3B82F6]">
-          {expanded ? "Read less" : "Read more"}
-        </Text>
-        <SymbolView
-          name={expanded ? "chevron.up" : "chevron.down"}
-          tintColor="#3B82F6"
-          size={12}
-          weight="bold"
-        />
-      </Pressable>
+      {lineCount >= 3 && (
+        <Pressable
+          onPress={() => setExpanded((prev) => !prev)}
+          hitSlop={8}
+          className="mt-2 flex-row items-center gap-1 self-start"
+        >
+          <Text className="text-[14px] font-semibold text-[#3B82F6]">
+            {expanded ? "Read less" : "Read more"}
+          </Text>
+          <SymbolView
+            name={expanded ? "chevron.up" : "chevron.down"}
+            tintColor="#3B82F6"
+            size={12}
+            weight="bold"
+          />
+        </Pressable>
+      )}
     </View>
   );
 }
