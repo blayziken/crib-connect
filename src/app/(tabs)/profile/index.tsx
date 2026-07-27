@@ -3,12 +3,22 @@ import { PreferencesCard } from "@/components/profile/PreferencesCard";
 import { ProfileHeader } from "@/components/profile/ProfileHeader";
 import { SafetyVerificationCard } from "@/components/profile/SafetyVerificationCard";
 import { dummyUserProfile } from "@/features/profile/data";
-import { useClerk } from "@clerk/expo";
+import { useAuth, useClerk } from "@clerk/expo";
+import { Redirect } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function ProfileScreen() {
+  const { isLoaded, isSignedIn } = useAuth();
+
+  if (!isLoaded) return null;
+  if (!isSignedIn) return <Redirect href="/onboarding" />;
+
+  return <ProfileScreenContent />;
+}
+
+function ProfileScreenContent() {
   const insets = useSafeAreaInsets();
   const { signOut } = useClerk();
 
