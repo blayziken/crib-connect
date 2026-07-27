@@ -1,7 +1,7 @@
 import type { UserProfile } from "./types";
 
 export const dummyUserProfile: UserProfile = {
-  name: "Tolu A.",
+  name: "Tolu J.",
   avatarUrl:
     "https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=300&q=80",
   isVerifiedStudent: true,
