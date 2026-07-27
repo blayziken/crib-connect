@@ -1,5 +1,9 @@
 import type { Listing } from "./types";
 
+export function getListingById(id: string): Listing | undefined {
+  return dummyListings.find((listing) => listing.id === id);
+}
+
 export const dummyListings: Listing[] = [
   {
     id: "1",
