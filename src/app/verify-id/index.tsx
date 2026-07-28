@@ -1,5 +1,4 @@
 import { Image } from "expo-image";
-import { router } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -8,28 +7,12 @@ export default function VerifyIdScreen() {
   return (
     <View className="flex-1 bg-[#E6F0FC]">
       <SafeAreaView edges={["top", "bottom"]} className="flex-1">
-        <View className="flex-row items-center justify-between px-6 pt-2">
-          <Pressable
-            onPress={() => router.back()}
-            hitSlop={12}
-            className="h-11 w-11 items-center justify-center rounded-full bg-white"
-            style={{
-              shadowColor: "#0F172A",
-              shadowOpacity: 0.1,
-              shadowRadius: 8,
-              shadowOffset: { width: 0, height: 2 },
-              elevation: 2,
-            }}
-          >
-            <SymbolView
-              name="chevron.left"
-              tintColor="#0F172A"
-              size={18}
-              weight="semibold"
-            />
-          </Pressable>
-
-          <SymbolView name="checkmark.shield.fill" tintColor="#208AEF" size={26} />
+        <View className="items-end px-6 pt-2">
+          <Image
+            source={require("@/assets/images/verification/badge.png")}
+            style={{ width: 28, aspectRatio: 48 / 56 }}
+            contentFit="contain"
+          />
         </View>
 
         <View className="items-center px-8">
@@ -46,7 +29,7 @@ export default function VerifyIdScreen() {
             <Text className="text-[26px]">👋</Text>
           </View>
 
-          <Text className="mt-2 text-center text-[15px] leading-[21px] text-[#64748B]">
+          <Text className="mt-2 text-center text-[13px] leading-[21px] text-[#64748B]">
             To keep CribConnect safe and trusted,{"\n"}we verify all students.
           </Text>
         </View>
@@ -70,7 +53,11 @@ export default function VerifyIdScreen() {
 
           <Pressable className="mt-4 items-center rounded-2xl border border-dashed border-[#BFDBFE] bg-[#F8FBFF] py-7">
             <View className="h-12 w-12 items-center justify-center rounded-xl bg-[#208AEF]">
-              <SymbolView name="arrow.up.doc.fill" tintColor="white" size={22} />
+              <SymbolView
+                name="arrow.up.doc.fill"
+                tintColor="white"
+                size={22}
+              />
             </View>
             <Text className="mt-3 text-[14px] font-medium text-[#334155]">
               Tap to upload or drag and drop
@@ -81,7 +68,7 @@ export default function VerifyIdScreen() {
           </Pressable>
         </View>
 
-        <View className="flex-1" />
+        <View className="py-5" />
 
         <View className="flex-row items-center justify-center gap-2 px-10">
           <SymbolView name="lock.fill" tintColor="#334155" size={14} />
@@ -90,8 +77,10 @@ export default function VerifyIdScreen() {
           </Text>
         </View>
 
+        <View className="py-5" />
+
         <View className="mx-6 mb-4 mt-5 flex-row items-center gap-3 rounded-2xl bg-[#DBEAFE] px-4 py-4">
-          <SymbolView name="clock" tintColor="#208AEF" size={24} />
+          <SymbolView name="clock" tintColor="#208AEF" size={50} />
           <View className="flex-1">
             <Text className="text-[15px] font-bold text-[#0F172A]">
               Pending Review
