@@ -1,0 +1,76 @@
+import type { NotificationItem } from "./types";
+
+export const dummyNotifications: NotificationItem[] = [
+  {
+    id: "1",
+    category: "messages",
+    section: "Today",
+    title: "New message from Sarah",
+    description: "Hi! I'm interested in your room. Is it still available?",
+    timestamp: "2m ago",
+    isUnread: true,
+    icon: {
+      kind: "avatar",
+      uri: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
+    },
+  },
+  {
+    id: "2",
+    category: "bookings",
+    section: "Today",
+    title: "Viewing scheduled",
+    description: "You have a viewing with Sarah on May 24 at 2:00 PM.",
+    timestamp: "1h ago",
+    isUnread: true,
+    icon: {
+      kind: "symbol",
+      name: "calendar",
+      bgColor: "#DBEAFE",
+      tintColor: "#3B82F6",
+    },
+  },
+  {
+    id: "3",
+    category: "system",
+    section: "Today",
+    title: "Verified landlord",
+    description: "Maple Stay has been verified. You can message them now.",
+    timestamp: "3h ago",
+    isUnread: false,
+    icon: {
+      kind: "symbol",
+      name: "checkmark.shield.fill",
+      bgColor: "#DCFCE7",
+      tintColor: "#16A34A",
+    },
+  },
+  {
+    id: "4",
+    category: "system",
+    section: "Yesterday",
+    title: "Price updated",
+    description: 'The price for "Modern Private Room" has been updated to ',
+    highlight: "$850/month.",
+    timestamp: "Yesterday",
+    isUnread: false,
+    icon: {
+      kind: "photo",
+      uri: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=200&q=80",
+    },
+  },
+  {
+    id: "5",
+    category: "system",
+    section: "Yesterday",
+    title: "Welcome to CribConnect! 👋",
+    description: "Thanks for joining! Let's help you find your perfect home in Barrie.",
+    timestamp: "Yesterday",
+    isUnread: false,
+    icon: {
+      kind: "symbol",
+      name: "bell.fill",
+      bgColor: "#FEF3C7",
+      tintColor: "#D97706",
+    },
+  },
+];
