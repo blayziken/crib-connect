@@ -12,7 +12,7 @@ export default function AuthScreen() {
   const { startSSOFlow } = useSSO();
 
   if (!isLoaded) return null;
-  if (isSignedIn) return <Redirect href="/home" />;
+  if (isSignedIn) return <Redirect href="/verify-id" />;
 
   const onGooglePress = async () => {
     try {
@@ -22,7 +22,7 @@ export default function AuthScreen() {
 
       if (createdSessionId && setActive) {
         await setActive({ session: createdSessionId });
-        router.replace("/home");
+        router.replace("/verify-id");
       }
     } catch (err) {
       console.error("Google sign-in error:", JSON.stringify(err, null, 2));
