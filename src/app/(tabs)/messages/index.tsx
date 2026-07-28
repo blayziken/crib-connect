@@ -1,7 +1,7 @@
+import { SafetyBanner } from "@/components/common/SafetyBanner";
 import { ConversationRow } from "@/components/messages/ConversationRow";
 import { MessagesHeader } from "@/components/messages/MessagesHeader";
 import { MessagesSearchBar } from "@/components/messages/MessagesSearchBar";
-import { SafetyBanner } from "@/components/messages/SafetyBanner";
 import { dummyConversations } from "@/features/messages/data";
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
