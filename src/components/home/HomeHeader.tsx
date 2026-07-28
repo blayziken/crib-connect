@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { Pressable, Text, View } from "react-native";
 
@@ -9,7 +10,10 @@ export function HomeHeader() {
         <Text style={{ color: "#0F172A" }}>Connect</Text>
       </Text>
 
-      <Pressable className="h-10 w-10 items-center justify-center">
+      <Pressable
+        onPress={() => router.push("/notifications")}
+        className="h-10 w-10 items-center justify-center"
+      >
         <View>
           <SymbolView
             name="bell"
