@@ -1,4 +1,5 @@
 import { Image } from "expo-image";
+import { router } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -79,17 +80,19 @@ export default function VerifyIdScreen() {
 
         <View className="py-5" />
 
-        <View className="mx-6 mb-4 mt-5 flex-row items-center gap-3 rounded-2xl bg-[#DBEAFE] px-4 py-4">
-          <SymbolView name="clock" tintColor="#208AEF" size={50} />
-          <View className="flex-1">
-            <Text className="text-[15px] font-bold text-[#0F172A]">
-              Pending Review
-            </Text>
-            <Text className="mt-0.5 text-[13px] leading-[17px] text-[#475569]">
-              We’ll review your document and notify you within 24 hours.
-            </Text>
+        <Pressable onPress={() => router.push("/home")}>
+          <View className="mx-6 mb-4 mt-5 flex-row items-center gap-3 rounded-2xl bg-[#DBEAFE] px-4 py-4">
+            <SymbolView name="clock" tintColor="#208AEF" size={50} />
+            <View className="flex-1">
+              <Text className="text-[15px] font-bold text-[#0F172A]">
+                Pending Review
+              </Text>
+              <Text className="mt-0.5 text-[13px] leading-[17px] text-[#475569]">
+                We’ll review your document and notify you within 24 hours.
+              </Text>
+            </View>
           </View>
-        </View>
+        </Pressable>
       </SafeAreaView>
     </View>
   );
